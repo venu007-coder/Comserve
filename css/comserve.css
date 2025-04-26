@@ -1,0 +1,298 @@
+/* CSS Document */
+
+body
+{ margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:0px; font-family:Verdana, SansSerif, Helvetica; font-size:11px;
+color:#676868; font-weight:normal; text-align:justify;
+}
+
+
+/* Menu part */
+.menus{
+	border:none;
+	border:0px;
+	margin:0 0;
+	padding:0px; font-family: Arial, Helvetica, sans-serif;	  
+	font-size:12px;
+	font-weight:bold;  	clear:left; position:relative; top:22px;  
+	}
+	.index-service{
+		width: 300px;
+		border: 1px solid #017be3;
+		background-color: #ffffff;
+	   padding-bottom: 12px;
+	   padding-left: 12px;
+	   padding-right: 12px;
+		
+	  }
+.menus ul{
+		background: url(../images/menu_bg.gif) repeat-x;
+	height:41px;
+	list-style:none;
+	margin:0;
+	/*padding:20;*/padding:0;font-weight:bold;
+	}
+	.menus li{
+		float:left;
+		padding:0px;font-weight:bold;
+		}
+	.menus li a{
+		/* background:url(../images/menu-lh.gif) repeat-x; */
+		color:#FFFFFF;
+		display:block;
+		font-weight:bold;
+		/*line-height:55px;*/line-height:48px;
+		margin:0px;
+		padding:0px 25px;
+		text-align:center;
+		text-decoration:none;
+		/*add*/
+		float:left;
+		}
+.menus li a:hover, .menus ul li:hover a { background: url(../images/menu_hover.gif)  no-repeat top  center  ;  height:41px; width:auto; color:#000000;}
+		.menus ul li a.current { background:  url(../images/menu_hover.gif)  no-repeat top  center  ;  height:41px; width:auto; color:#000000;}
+			
+/* Menu part */
+
+
+/* Service part */
+.services_lh{ background:url(../images/service_lh.gif) no-repeat; width:14px; height:48px;
+}
+
+
+
+
+.services_rh{ background: url(../images/service_rh.gif) no-repeat; width:15px; height:37px;
+}
+
+
+
+/* .services_rh_side{ background:url(../images/services_rh_side_lh.gif) no-repeat; width:13px; height:37px;
+} 	 */
+
+
+/* .service_lh_side{ background:url(../images/services_rh_side.gif)no-repeat; width:14px; height:48px;
+} */
+
+
+
+.services_lh_content{ font-family:Verdana, SansSerif, Helvetica; font-size:12px; color:#666666; font-weight:normal;  
+}
+.services_lh_content1{ font-family:Verdana, SansSerif, Helvetica; font-size:12px; color:#000000; font-weight:normal;  
+}
+
+
+/* Service part */
+
+
+
+.ver_spacer_lh{ background:url(../images/ver_spacer.gif) no-repeat; width:4px; height:509px;
+}
+
+
+.ver_spacer_rh{ background:url(../images/ver_spacer_rh.gif) no-repeat; width:4px; height:509px;
+}
+
+
+.ver_spacer_hor{ background:url(../images/ver_spacer_hor.gif) repeat-x; height:501px;
+}
+
+
+
+.welcome_content{ font-family:Verdana, SansSerif, Helvetica; font-size:12px; color:#666666; font-weight:normal; line-height:20px; padding-left:10px; padding-right:5px;   
+}
+
+.vision_content{ font-family:Verdana, SansSerif, Helvetica; font-size:12px; color:#666666; font-weight:normal; line-height:15px; text-align:left;    
+}
+
+
+
+
+.testimonials{ background:#e1f0fc; border:#017be3 1px solid; padding-left:12px; padding-right:12px; line-height:22px;
+}
+.our_service{
+	width: 200px;
+	border: 1px solid green;
+	padding: 50px;
+	
+  }
+.header-left{ 
+	height: 5%;
+	background:#017be3;
+	width: 250px;
+	
+	margin: 20px;  }
+.footer{
+ background:url(../images/footer.gif) repeat-x; height:18;
+ }
+  .footer-font{
+font-family:Arial, Helvetica, sans-serif;
+font-size:10px;
+font-weight:normal;
+color:#FFFFFF;
+text-align:center;
+}
+a.product:link{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#666666;
+font-weight:normal;
+text-align:center;
+text-decoration:none;
+
+}
+a.product:active{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#666666;
+font-weight:normal;
+text-align:center;
+text-decoration:none;
+
+}
+a.product:visited{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#666666;
+font-weight:normal;
+text-align:center;
+text-decoration:none;
+
+}
+a.product:hover{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#000000;
+font-weight:normal;
+text-align:center;
+text-decoration:none;
+}
+.form_text {
+	font-family: Arial;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	height: 15px;
+	width: 180px;
+}
+.bodytext {
+	font-family: Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #454545;
+	text-decoration: none;
+	border-top-style: 5;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	text-align: justify;
+	line-height: 18px;
+}
+/*Accordion*/
+
+ul#menu, ul#menu ul {
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  width:600px; font-family: "Swis721 Cn BT", sans-serif, Arial, Helvetica;    font-size:12px; color:#000000; letter-spacing:1px;
+  font-weight:normal;
+
+
+}
+
+ul#menu a {
+  display: block;
+  text-decoration: none;  padding-left:10px;	
+}
+
+ul#menu li {
+  margin-top:2px; 
+}
+
+ul#menu li a {
+  background:#d0ecff  url(../images/plus-icon.png)  center right no-repeat; border:#006cd1 1px solid;
+  color: #000;	
+ padding-left:10px; padding-top:7px; padding-bottom:7px; 
+}
+
+ul#menu li a:hover {
+  background: #ffffff url(../images/plus-icon.png) right no-repeat; 
+}
+
+ul#menu li ul li a {
+  background: #ffffff;
+  color: #000;
+  padding-left: 20px;
+}
+
+ul#menu li ul li a:hover {
+  background: #aaa;
+  border-left: 5px #000 solid;
+  padding-left: 15px;
+}
+
+
+
+/*Accordin-ends*/
+.aboutus{ background:#ffffff; border:#017be3 1px solid; padding-left:12px; padding-right:12px; line-height:22px;
+}
+.submit{ background:#006bd0 ; width:125px; height:25px; color:#FFFFFF; font-weight:bold; }
+a.product:link{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#666666;
+font-weight:normal;
+text-align:center;
+text-decoration:none;
+
+}
+a.product:active{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#666666;
+font-weight:normal;
+text-align:center;
+text-decoration:none;
+
+}
+a.product:visited{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#666666;
+font-weight:normal;
+text-align:center;
+text-decoration:none;
+
+}
+a.product:hover{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#000000;
+font-weight:normal;
+text-align:center;
+text-decoration:none;
+}
+
+
+
+
+.mandatory{ color:#FF0000; font-size:10px; font-weight:bold;
+}
+
+	.change_text{ font-family:Verdana, SansSerif, Helvetica; font-size:13px; padding-left:20px; color:#666666; text-decoration:none;
+	
+	}
+
+.testimonials_text{ font-family:Verdana, SansSerif, Helvetica; font-size:14px; padding-left:20px; color:#666666; text-decoration:none;
+	
+	}
+
+.coming_soon{ color:#FF0000; font-size:45px; font-weight:bold; text-align:center
+}
+
+/* Footer */
+.footer_bg{ background:#1b88e6; color:#FFFFFF; font-weight:normal; text-align:center; height:20px; padding-top:6px;
+}
+
+/* Footer */

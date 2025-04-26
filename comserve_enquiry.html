@@ -1,0 +1,637 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>COMSERVE Private Security Services </title>
+
+    <meta name="Description" content="Comserve is an integrated Private Security service provider company. Our focus is to provide care and secure manpower support services to the esteemed Organizations like IT Companies, MNC Companies, Educational Institutions and Apartment Associations who require skilled and committed human resources."  />    <meta name="Keywords" content="Comserve Private Security Services, comserve.co.in, Housekeeping services, Office boys, Pantry boys, Defensive Drivers Services, Pest Controlling, Carpet cleaning, Upholstery cleaning, Swimming pool cleaning, Overhead water tank cleaning Electrical, Plumbing works," />
+        <meta name="COPYRIGHT" content="Copyright 2012 comserve.co.in" />
+    <meta name="GENERATOR" content="" />
+    <meta name="author" content="COMSERVE Private Security Services"  />
+    <meta name="RESOURCE-TYPE" content="DOCUMENT" />
+    <meta name="DISTRIBUTION" content="GLOBAL" />
+    <meta name="ROBOTS" content="INDEX, FOLLOW" />
+    <meta name="REVISIT-AFTER" content="1 DAYS" />
+    <meta name="RATING" content="GENERAL" />
+    <meta name="RATING" content="GENERAL" />
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+    <link href="css/comserve.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="images/company_mini_logo.png" type="image/png">
+        <!---->
+        <meta property="og:title" content="COMSERVE Private Security Services" />
+        <!-- <meta property="og:description" content="Comserve (Acronym for Complete Private Security Services) Comserve is an integrated facility maintenance service provider company." /> -->
+        <meta property="og:image" content="https://comserve.co.in/images/company_mini_logo.png" />
+        <meta property="og:url" content="https://comserve.co.in" />
+        <meta property="og:type" content="website" />
+        <!---->
+        <script type="application/ld+json">
+            {
+                "image": [
+                "https://comserve.co.in/images/welcome_picture.webp" 
+                 ]  
+            }
+        </script>
+    <script type="text/javascript">
+
+        function dosubmit(form) {
+            String.prototype.trim = function () {
+                return this.replace(/^\s+/, '').replace(/\s+$/, '');
+            }
+            if (form.txtname.value == "") {
+                alert("Please Enter your name");
+                form.txtname.focus();
+                return false;
+
+            }
+            if (form.txtemail.value == "") {
+                alert("Please Enter email address");
+                form.txtemail.focus();
+                return false;
+            }
+
+            if (form.txtemail.value != "") {
+                var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                //return emailPattern.test(document.contact.txtemail.value);  
+                if (emailPattern.test(form.txtemail.value)) {
+                    //alert("true");   
+                } else {
+                    alert("Please Enter valid email address");
+                    return false;
+                }
+
+            }
+
+            if (form.txtaddress.value == "") {
+                alert("Please Enter your Address");
+                form.txtdesc.focus();
+                return false;
+
+            }
+
+            if (form.txtdesc.value == "") {
+                alert("Please Enter your Description");
+                form.txtdesc.focus();
+                return false;
+
+            }
+
+            
+            if (form.txtmobileno.value == "") {
+                alert("Please Enter Mobile Number");
+                form.txtmobileno.focus();
+                return false;
+            }
+
+            if (form.captcha.value === "") {
+                alert("Please Enter the Captcha");
+                form.captcha.focus();
+                return false;
+            }
+
+            //const usr_input = document.getElementById("submit").value;
+
+            if (form.captcha.value === captcha.innerHTML) {
+                submit();
+            } else {
+                alert("Captcha Not Matched");
+            }
+            generate();
+
+        }
+
+        function submit() {
+            var fname = document.getElementById('txtname').value;
+            var email = document.getElementById('txtemail').value;
+            var phone = document.getElementById('txtmobileno').value;
+            var address = document.getElementById('txtaddress').value;
+            var description = document.getElementById('txtdesc').value;
+
+            var formData = {
+                fname: fname,
+                email: email,
+                phone: phone,
+                address: address,
+                description:description
+            };
+           
+        
+
+            var apiUrl = 'https://api.comserve.co.in/StoryboardAPI/api/Login/comservecontactus';
+            const options = {
+                method: 'POST',
+                body: JSON.stringify(formData)
+            };
+
+            fetch(apiUrl, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }, method: "POST",
+                body: JSON.stringify(formData)
+            }).then(response => {
+                return response.json();
+            }).then(data => {
+                console.log(data)
+                alert("Mail send successfully!");
+                document.getElementById('frmenquiry').reset();
+            }).catch(err => {
+                console.log(err)
+                alert("Mail not send!");
+                document.getElementById('frmenquiry').reset();
+            });
+           
+      
+        }
+
+
+        let captcha;
+        function generate() {
+            document.getElementById("submit").value = "";
+
+            captcha = document.getElementById("image");
+            let uniquechar = "";
+
+            const randomchar =
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            for (let i = 1; i < 7; i++) {
+                uniquechar += randomchar.charAt(
+                    Math.random() * randomchar.length)
+            }
+
+            captcha.innerHTML = uniquechar;
+        }
+
+    </script>
+
+    <style>
+        #image {
+            margin-top: 10px;
+            box-shadow: 5px 5px 5px 5px gray;
+            width: 80px;
+            ;
+            padding: 20px;
+            font-weight: 400;
+            padding-bottom: 0px;
+            height: 40px;
+            user-select: none;
+            text-decoration: line-through;
+            font-style: italic;
+            font-size: x-large;
+            border: red 2px solid;
+            margin-left: 10px;
+        }
+    </style>
+
+
+
+
+
+
+</head>
+
+<body onload="generate()">
+    <table width="942" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#FFFFFF">
+        <tr>
+            <td>
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td>
+                            <img src="images/logo13.png" width="40%"  style="padding-left:330px;margin-top: 10px;  " alt="Logo"  draggable="false"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <div class="menus">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>
+                                        <img src="images/seperator.gif" alt="Seperator" style="padding-top: 8px;" />
+                                    </li>
+                                    <li><a href="comserve_about.html">About Us</a></li>
+                                    <li>
+                                        <img src="images/seperator.gif" alt="Seperator" style="padding-top: 8px;" />
+                                    </li>
+                                    <li><a href="comserve_services.html">Services</a> </li>
+                                    <li>
+                                        <img src="images/seperator.gif" alt="Seperator" style="padding-top: 8px;" />
+                                    </li>
+                                    <li><a href="comserve_enquiry.html" class="current">Enquiry</a></li>
+                                    <li>
+                                        <img src="images/seperator.gif" alt="Seperator" style="padding-top: 8px;" />
+                                    </li>
+                                    <li><a href="comserve_clients.html">Clients</a></li>
+                                    <li>
+                                        <img src="images/seperator.gif" alt="Seperator" style="padding-top: 8px;" />
+                                    </li>
+                                    <li><a href="comserve_contactus.html">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/enquiry_banner.jpg" alt="Banner" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" height="12">
+            </td>
+        </tr>
+        <!-- Middle Part -->
+        <tr>
+            <td colspan="5" valign="top">
+                <table width="100%" cellpadding="6" cellspacing="6" border="0">
+                    <tr>
+                        <td width="3%">
+                        <td colspan="5" valign="top">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td colspan="5" valign="top">
+                                        <table width="61%" cellpadding="0" cellspacing="0" border="0">
+                                            <!--<tr>
+												<td class="services_lh">
+												</td>
+												<td class="services_hor">
+													<img src="images/title_services.jpg"  style="padding-left:10px; padding-top:12px; "alt="Our Services" />
+												</td>
+												<td  class="services_rh">
+												</td>
+											</tr>-->
+                                            <tr>
+                                                <td class="header-left" colspan="2">
+                                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                        <!--<table width="100%" cellpadding="0" cellspacing="0" border="0">
+																<td style="padding-bottom:10px;"><img src="images/services_icon.gif" />
+																</td>
+																<td class="services-header-font">OUR SERVICES
+																</td>
+															</table>-->
+                                                            <tr>
+                                                                <td class="service-star" width="28%"
+                                                                    style="padding-bottom:5px; padding-left:12px;">
+                                                                    <img src="images/service_star.gif" alt="star" />
+                                                                </td>
+                                                                <td >
+                                                                    <h2 style="color: #f5f5f5;">Our services</h2>
+                                                                </td>
+                                                            </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="5" height="5">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <img src="images/services_img.gif" alt="service" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="5" height="5">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3" valign="top">
+                                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td>
+                                                                <img src="images/spacer.jpg" alt="Spacer" />
+                                                            </td>
+                                                            <td width="90%" class="services_lh_content">
+                                                                <a href="comserve_services.html"
+                                                                    class="product">Security Services</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="5" height="10">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="images/spacer.jpg" alt="Spacer" />
+                                                            </td>
+                                                            <td width="90%" class="services_lh_content">
+                                                                <a href="comserve_services.html" class="product">House
+                                                                    Keeping</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="5" height="10">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="images/spacer.jpg" alt="Spacer" />
+                                                            </td>
+                                                            <td width="90%" class="services_lh_content">
+                                                                <a href="comserve_services.html" class="product">Office
+                                                                    Boy</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="5" height="10">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="images/spacer.jpg" alt="Spacer" />
+                                                            </td>
+                                                            <td width="90%" class="services_lh_content">
+                                                                <a href="comserve_services.html" class="product">Pantry
+                                                                    Boys</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="5" height="10">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="images/spacer.jpg" alt="Spacer" />
+                                                            </td>
+                                                            <td width="90%" class="services_lh_content">
+                                                                <a href="comserve_services.html"
+                                                                    class="product">Defensive Drivers</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="5" height="10">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="images/spacer.jpg" alt="Spacer" />
+                                                            </td>
+                                                            <td width="90%" class="services_lh_content">
+                                                                <a href="comserve_services.html" class="product">Pest
+                                                                    Control</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="5" height="10">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="images/spacer.jpg" alt="Spacer" />
+                                                            </td>
+                                                            <td width="90%" class="services_lh_content">
+                                                                <a href="comserve_services.html" class="product">Carpet
+                                                                    Shampoo Cleaning</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="5" height="10">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="images/spacer.jpg" alt="Spacer" />
+                                                            </td>
+                                                            <td width="90%" class="services_lh_content">
+                                                                <a href="comserve_services.html"
+                                                                    class="product">Upholstery cleaning</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="5" height="10">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="images/spacer.jpg" alt="Spacer" />
+                                                            </td>
+                                                            <td width="90%" class="services_lh_content">
+                                                                <a href="comserve_services.html"
+                                                                    class="product">Swimming pool cleaning</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="5" height="10">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="images/spacer.jpg" alt="Spacer" />
+                                                            </td>
+                                                            <td width="90%" class="services_lh_content">
+                                                                <a href="comserve_services.html" class="product">Over
+                                                                    head water tank cleaning</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="5" height="10">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="images/spacer.jpg" alt="Spacer" />
+                                                            </td>
+                                                            <td width="90%" class="services_lh_content">
+                                                                <a href="comserve_services.html"
+                                                                    class="product">Electrical and Plumbing works</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="5" height="5">
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td width="2%" valign="top">
+                                        <img src="images/dotted_ver.gif" style="padding-left: 5px; padding-right: 6px;"
+                                            alt="Dotted" />
+                                    </td>
+                                    <td width="73%" colspan="5" valign="top" class="aboutus">
+                                        <table width="630" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td height="30" colspan="2">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <img src="images/enquiry-img.gif" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="30" colspan="2">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" valign="top">
+                                                    <form id="frmenquiry" name="frmenquiry" method="post"
+                                                        action="comserve_enquirycfm.php">
+                                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                            <tr>
+                                                                <td width="14%" nowrap="nowrap">
+                                                                    Name <span class="mandatory">*</span>
+                                                                </td>
+                                                                <td width="86%">
+                                                                    <input type="text" name="txtname" id="txtname" />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="22">
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td nowrap="nowrap">
+                                                                    E - Mail <span class="mandatory">*</span>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" name="txtemail" id="txtemail" />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="22">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td nowrap="nowrap">
+                                                                    Mobile No <span class="mandatory">*</span>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" name="txtmobileno"
+                                                                        id="txtmobileno" />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="22">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td nowrap="nowrap">
+                                                                    Address <span class="mandatory">*</span>
+                                                                </td>
+                                                                <td>
+                                                                    <textarea name="txtaddress" cols="20" rows="3"
+                                                                        id="txtaddress"></textarea>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="22">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td nowrap="nowrap">
+                                                                    Description  <span class="mandatory">*</span>
+                                                                </td>
+                                                                <td>
+                                                                    <textarea name="txtdesc" cols="20" rows="3"
+                                                                        id="txtdesc"></textarea>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="22">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3" valign="top">
+                                                                    <table width="100%" cellpadding="0" cellspacing="0"
+                                                                        border="0">
+                                                                        <tr>
+                                                                            <td width="13%" nowrap="nowrap">
+                                                                                Captcha <span class="mandatory">*</span>
+                                                                            </td>
+                                                                            <td width="24%">
+                                                                                <input name="captcha" type="text"
+                                                                                    id="submit">
+                                                                            </td>
+
+                                                                            <td>
+                                                                                <div class="inline"
+                                                                                    style="margin-left: 10px;"
+                                                                                    onclick="generate()">
+                                                                                    <i class="fas fa-sync"></i>
+                                                                                </div>
+                                                                            </td>
+
+
+                                                                            <td width="63%">
+                                                                                <div id="image" class="inline"
+                                                                                    selectable="False">
+                                                                                </div>
+
+
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td colspan="3" align="left">
+                                                                                <span style="padding-left:82px;"> Please
+                                                                                    Enter the Captcha code </span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td colspan="3" valign="top">
+                                                                    <table width="100%" cellpadding="0" cellspacing="0"
+                                                                        border="0">
+                                                                        <tr>
+                                                                            <td height="22">
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="15%">
+                                                                            </td>
+                                                                            <td>
+                                                                                <input name="btnsubmit" type="button"
+                                                                                    class="submit"
+                                                                                    onclick="return dosubmit(this.form);"
+                                                                                    value="Submit" align="middle" />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td colspan="5" height="10">
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Middle Part Ends-->
+                </table>
+            </td>
+        </tr>
+        <!-- Footet Part -->
+        <tr>
+            <td valign="top" class="footer_bg" colspan="5">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td>
+                             2012 Comserve. &nbsp; &nbsp; &nbsp; All rights reserved
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- Footet Part -->
+    </table>
+</body>
+
+</html>
